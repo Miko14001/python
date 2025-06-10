@@ -25,9 +25,9 @@ for key, value in dict_of_titles.items():
 
 dict_of_titles[key]['to'] = len(file_list)
 
-list_of_titles.sort()
+sorted_list_of_titles = sorted(list_of_titles, key=lambda s: (not s[0].islower(), s))
 
-for title in list_of_titles:
+for title in sorted_list_of_titles:
     for i in range(dict_of_titles[title]["from"], dict_of_titles[title]["to"]):
             print(file_list[i])
 
