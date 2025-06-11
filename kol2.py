@@ -1,4 +1,4 @@
-f = open("tata/test", "r")
+f = open("test", "r")
 file_list = []
 for line in f:
     one_line = line.strip("\n")
@@ -25,7 +25,7 @@ for key, value in dict_of_titles.items():
 
 dict_of_titles[key]['to'] = len(file_list)
 
-sorted_list_of_titles = sorted(list_of_titles, key=lambda s: (not s[0].islower(), s))
+sorted_list_of_titles = sorted(list_of_titles, key=str.lower)
 
 for title in sorted_list_of_titles:
     for i in range(dict_of_titles[title]["from"], dict_of_titles[title]["to"]):
